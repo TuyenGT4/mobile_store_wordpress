@@ -1,0 +1,248 @@
+/*
+Theme Name: Mobile Store WP
+Theme URI: https://github.com/TuyenGT4/mobile-store-php
+Author: TuyenGT4
+Description: Theme chuyển từ mã nguồn PHP + Bootstrap sang WordPress, tương thích WooCommerce.
+Version: 1.0
+*/
+
+/* ======= Layout & Sticky Footer ======= */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.site-content {
+  flex: 1 0 auto;
+  padding-top: 90px;
+}
+.site-footer {
+  flex-shrink: 0;
+}
+
+/* Padding top for content when admin bar is visible */
+.admin-bar .site-content {
+  padding-top: 122px;
+}
+
+/* ======= Header/Navbar ======= */
+.navbar.fixed-top {
+  height: 60px;
+  min-height: 60px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.admin-bar .navbar.fixed-top {
+  top: 32px !important;
+}
+
+/* Custom gradient header (optional, add bg-mobile-header class to nav if needed) */
+.bg-mobile-header {
+  background: linear-gradient(90deg, #005bea 0%, #3c8ce7 100%);
+}
+
+/* Logo styling */
+.navbar-brand img {
+  height: 38px !important;
+  width: auto !important;
+  max-width: 120px !important;
+  object-fit: contain;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.navbar-brand {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Search bar styling */
+.navbar form[role="search"] {
+  max-width: 320px;
+  min-width: 180px;
+}
+.navbar .form-control {
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  height: 38px;
+}
+
+/* Menu item styling */
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+/* ======= WooCommerce Product Detail ======= */
+.single-product .container,
+.single-product .site-content .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.single-product .woocommerce-product-gallery__wrapper,
+.single-product .woocommerce-product-gallery {
+  max-width: 280px;
+  margin: 0 auto;
+}
+.single-product .woocommerce-product-gallery__image img,
+.single-product .woocommerce-product-gallery img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  object-fit: contain;
+}
+.single-product .summary {
+  max-width: 420px;
+  font-size: 0.98rem;
+}
+
+/* WooCommerce tabs panel width */
+.single-product .woocommerce-Tabs-panel {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 991.98px) {
+  .site-content,
+  .admin-bar .site-content {
+    padding-top: 110px;
+  }
+  .navbar.fixed-top {
+    height: auto;
+    min-height: 52px;
+    padding: 10px 0 !important;
+  }
+  .single-product .container,
+  .single-product .site-content .container,
+  .single-product .woocommerce-Tabs-panel {
+    max-width: 98vw;
+  }
+  .single-product .woocommerce-product-gallery__wrapper,
+  .single-product .woocommerce-product-gallery {
+    max-width: 170px;
+  }
+  .single-product .woocommerce-product-gallery__image img,
+  .single-product .woocommerce-product-gallery img {
+    max-width: 150px;
+  }
+  .single-product .summary {
+    max-width: 100%;
+  }
+}
+
+
+.header-menu .nav-link.active,
+.header-menu .active > .nav-link {
+    color: #fff !important;         /* Màu chữ nổi bật */
+    background: #2563eb !important; /* Nền xanh nhạt hoặc màu bạn thích */
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.06);
+    transition: background 0.2s, color 0.2s;
+}
+
+
+.header-menu .current-menu-item > a,
+.header-menu .current-menu-ancestor > a {
+    color: #fff !important;
+    background: #2563eb !important;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.06);
+    transition: background 0.2s, color 0.2s;
+}
+
+
+.header-menu .nav-link:hover,
+.header-menu .current-menu-item > a:hover {
+    background: #2563eb33; /* Xanh nhạt nhẹ khi hover */
+    color: #2563eb;
+    border-radius: 8px;
+}
+
+/* Product card nhỏ gọn hơn */
+.product-card,
+.card.product-card,
+.card {
+  max-width: 210px;
+  min-width: 180px;
+  padding: 12px 10px;
+  font-size: 0.95rem;
+  margin: 0 auto 20px auto;
+}
+
+/* Ảnh sản phẩm nhỏ lại */
+.product-card img,
+.card.product-card img,
+.card img {
+  max-width: 170px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Tiêu đề nhỏ gọn */
+.product-card .card-title,
+.card .card-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Giá và nút nhỏ hơn */
+.product-card .card-text,
+.card .card-text {
+  font-size: 0.97rem;
+}
+.product-card .button,
+.card .button,
+.card .add_to_cart_button {
+  font-size: 0.93rem;
+  padding: 0.35rem 0.7rem;
+}
+
+/* Nếu dùng lưới Bootstrap, giảm số cột trên desktop */
+@media (min-width: 768px) {
+  .row .col-md-3 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+/* Bỏ gạch dưới ở chữ trong product card */
+.card a,
+.product-card a {
+  text-decoration: none !important;
+}
+
+/* Khi hover, có thể để màu khác hoặc vẫn không gạch dưới */
+.card a:hover,
+.product-card a:hover {
+  text-decoration: none !important;
+  color: #2563eb; /* hoặc màu bạn thích */
+}
+
+/* Thêm vào style.css của theme hoặc trong file <style> trong my-account.php */
+.woocommerce-account .col-md-9 {
+  max-width: 100% !important;
+  flex: 0 0 75% !important;
+  display: block !important;
+  margin: 0 !important;
+}
+.woocommerce-account .card,
+.woocommerce-account .card-body,
+.woocommerce-account .table-responsive {
+  width: 100% !important;
+  max-width: 100% !important;
+}
