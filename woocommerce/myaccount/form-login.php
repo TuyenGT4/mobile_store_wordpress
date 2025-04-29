@@ -1,4 +1,6 @@
-<?php include 'process-login.php'; ?>
+<?php global $login_error; if (!empty($login_error)): ?>
+    <div class="alert alert-danger"><?php echo esc_html($login_error); ?></div>
+<?php endif; ?>
 <div class="myaccount-login">
     <h2>Đăng nhập tài khoản</h2>
     <form method="post" action="<?php echo esc_url( wc_get_account_endpoint_url('dashboard') ); ?>">
@@ -12,5 +14,5 @@
         </div>
         <button type="submit" class="btn btn-primary" name="login_action">Đăng nhập</button>
     </form>
-    <p>Bạn chưa có tài khoản? <a href="<?php echo wc_get_account_endpoint_url('register'); ?>">Đăng ký ngay</a></p>
+    <p>Bạn chưa có tài khoản? <a href="<?php echo esc_url( wc_get_account_endpoint_url('register') ); ?>">Đăng ký ngay</a>
 </div>

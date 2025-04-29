@@ -30,9 +30,15 @@
         <!-- Menu & nút -->
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url('/dien-thoai/') ); ?>">Điện thoại</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url('/phu-kien/') ); ?>">Phụ kiện</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url('/gioi-thieu/') ); ?>">Giới thiệu</a></li>
+          <li class="nav-item">
+              <a class="nav-link" href="<?php echo esc_url( get_term_link( 'dien-thoai', 'product_cat' ) ); ?>">Điện thoại</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="<?php echo esc_url( get_term_link( 'phu-kien', 'product_cat' ) ); ?>">Phụ kiện</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="<?php echo esc_url( home_url('/gioi-thieu/') ); ?>">Giới thiệu</a>
+          </li>
             <!-- Giỏ hàng -->
             <li class="nav-item ms-2">
               <a class="nav-link position-relative" href="<?php echo wc_get_cart_url(); ?>">

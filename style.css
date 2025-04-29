@@ -143,18 +143,16 @@ body {
   }
 }
 
-
+/* ======= Header Menu Active Styles ======= */
 .header-menu .nav-link.active,
 .header-menu .active > .nav-link {
-    color: #fff !important;         /* Màu chữ nổi bật */
-    background: #2563eb !important; /* Nền xanh nhạt hoặc màu bạn thích */
+    color: #fff !important;
+    background: #2563eb !important;
     border-radius: 8px;
     font-weight: 600;
     box-shadow: 0 2px 8px rgba(37,99,235,0.06);
     transition: background 0.2s, color 0.2s;
 }
-
-
 .header-menu .current-menu-item > a,
 .header-menu .current-menu-ancestor > a {
     color: #fff !important;
@@ -164,73 +162,157 @@ body {
     box-shadow: 0 2px 8px rgba(37,99,235,0.06);
     transition: background 0.2s, color 0.2s;
 }
-
-
 .header-menu .nav-link:hover,
 .header-menu .current-menu-item > a:hover {
-    background: #2563eb33; /* Xanh nhạt nhẹ khi hover */
+    background: #2563eb33;
     color: #2563eb;
     border-radius: 8px;
 }
 
-/* Product card nhỏ gọn hơn */
+/* ================= WooCommerce Product Grid & Item (Thêm fix mạnh) ================= */
+ul.products {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin: 0 -10px !important;
+  padding: 0 !important;
+  list-style: none !important;
+  justify-content: flex-start !important;
+}
+ul.products.columns-4 > li.product {
+  width: 23% !important;
+  margin: 1% 1% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative;
+}
+ul.products > li.product {
+  margin-bottom: 30px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+@media (max-width: 991.98px) {
+  ul.products.columns-4 > li.product { width: 48% !important; }
+}
+@media (max-width: 575.98px) {
+  ul.products.columns-4 > li.product { width: 98% !important; }
+}
+/* WooCommerce product card style */
+ul.products li.product a {
+  text-decoration: none !important;
+}
+ul.products li.product .button,
+ul.products li.product .add_to_cart_button {
+  font-size: 1rem !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 5px !important;
+  background: #2563eb !important;
+  color: #fff !important;
+  border: none !important;
+  margin-top: 12px !important;
+  transition: background 0.2s !important;
+  width: fit-content !important;
+}
+ul.products li.product .button:hover,
+ul.products li.product .add_to_cart_button:hover {
+  background: #3c8ce7 !important;
+  color: #fff !important;
+}
+ul.products li.product .price {
+  color: #222 !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  margin-top: 0.3em !important;
+  margin-bottom: 0.7em !important;
+}
+ul.products li.product .onsale {
+  background: #a6a820 !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  font-size: 0.92rem !important;
+  padding: 0.2em 1em !important;
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+  z-index: 2 !important;
+}
+ul.products li.product .woocommerce-loop-product__title {
+  font-size: 1.08rem !important;
+  font-weight: 500 !important;
+  margin: 0.6em 0 0.2em 0 !important;
+  color: #222 !important;
+  min-height: 38px !important;
+}
+
+/* Đảm bảo ảnh sản phẩm canh giữa và không quá to */
+ul.products li.product img {
+  margin: 0 auto !important;
+  max-width: 98% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* ====== Bỏ style cũ Bootstrap card cho sản phẩm ====== */
 .product-card,
 .card.product-card,
 .card {
-  max-width: 210px;
-  min-width: 180px;
-  padding: 12px 10px;
-  font-size: 0.95rem;
-  margin: 0 auto 20px auto;
+  max-width: unset !important;
+  min-width: unset !important;
+  padding: unset !important;
+  font-size: unset !important;
+  margin: unset !important;
+  box-shadow: unset !important;
+  border: unset !important;
+  background: unset !important;
 }
 
-/* Ảnh sản phẩm nhỏ lại */
+/* Bỏ style ảnh sản phẩm bootstrap card cho WooCommerce */
 .product-card img,
 .card.product-card img,
 .card img {
-  max-width: 170px;
-  height: auto;
-  margin: 0 auto;
+  max-width: unset !important;
+  height: unset !important;
+  margin: unset !important;
 }
 
-/* Tiêu đề nhỏ gọn */
+/* Bỏ style nhỏ gọn tiêu đề card */
 .product-card .card-title,
 .card .card-title {
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem;
+  font-size: unset !important;
+  margin-bottom: unset !important;
 }
 
-/* Giá và nút nhỏ hơn */
+/* Bỏ style nhỏ gọn giá card */
 .product-card .card-text,
 .card .card-text {
-  font-size: 0.97rem;
+  font-size: unset !important;
 }
 .product-card .button,
 .card .button,
 .card .add_to_cart_button {
-  font-size: 0.93rem;
-  padding: 0.35rem 0.7rem;
+  font-size: unset !important;
+  padding: unset !important;
 }
 
 /* Nếu dùng lưới Bootstrap, giảm số cột trên desktop */
 @media (min-width: 768px) {
   .row .col-md-3 {
-    flex: 0 0 20%;
-    max-width: 20%;
+    flex: unset !important;
+    max-width: unset !important;
   }
 }
 
 /* Bỏ gạch dưới ở chữ trong product card */
 .card a,
 .product-card a {
-  text-decoration: none !important;
+  text-decoration: unset !important;
 }
 
 /* Khi hover, có thể để màu khác hoặc vẫn không gạch dưới */
 .card a:hover,
 .product-card a:hover {
-  text-decoration: none !important;
-  color: #2563eb; /* hoặc màu bạn thích */
+  text-decoration: unset !important;
+  color: unset !important;
 }
 
 /* Thêm vào style.css của theme hoặc trong file <style> trong my-account.php */
@@ -245,4 +327,45 @@ body {
 .woocommerce-account .table-responsive {
   width: 100% !important;
   max-width: 100% !important;
+}
+
+ul.products li.product .onsale {
+  background: #a6a820 !important;
+  color: #fff !important;
+  border-radius: 18px !important;
+  font-size: 0.95rem !important;
+  padding: 0.22em 1.2em !important;
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+  z-index: 2 !important;
+  min-width: 80px !important;
+  max-width: 120px !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1.4 !important;
+  white-space: nowrap !important;
+  height: 38px !important; /* Đảm bảo badge đủ cao để căn giữa */
+}
+
+.account-menu-custom .nav-link {
+  font-size: 1.08rem;
+  color: #34495e;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.account-menu-custom .nav-link.active, 
+.account-menu-custom .nav-link:hover {
+  background: #2563eb;
+  color: #fff;
+}
+.account-menu-custom .nav-link i {
+  font-size: 1.12em;
+  margin-right: 8px;
+  vertical-align: middle;
 }
